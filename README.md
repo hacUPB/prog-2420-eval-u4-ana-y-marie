@@ -2,6 +2,6 @@
 # Unidad 
 ---
 ## Documentación del proyecto
-Nombre:  
+Nombres: Marie Alejandra Amaya Mendez y Ana Sofía Henao Agudelo  
 ID:  
 ---
