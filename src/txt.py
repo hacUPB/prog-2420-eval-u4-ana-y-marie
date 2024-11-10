@@ -97,7 +97,7 @@ def main():
             archivo = archivo.strip('"')
             menu_de_texto(archivo)
         elif opcion == "3":
-            jji
+            menu_csv()
         elif opcion == "4":
             print("saliendo...")
             break
