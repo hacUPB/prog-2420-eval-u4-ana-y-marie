@@ -1,6 +1,7 @@
 import os
 import matplotlib.pyplot as plt
 
+
 def listar_archivos():
         ruta = input("Ingrese la ruta de un directorio (Enter para el actual): ")
         ruta = ruta.strip('"')
