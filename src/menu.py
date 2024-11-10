@@ -175,9 +175,25 @@ def menu_csv():
     mostrar_mensaje() 
     nombre_archivo = "C:\\Users\\marie\\Downloads\\nasa_global_landslide_catalog_point (1).csv"
 
-    with open(nombre_archivo, 'r', encoding='utf-8') as archivo:
-        print("Primeras 15 filas del archivo (sin incluir el encabezado):")
-        mostrar_primeras_filas(archivo)
+    while True:
+            print("Elige la opción que deseas:")
+            print("1.Ver las primeras 15 filas del archivo(sin encabezado):")
+            print("2.Calcular Estadísticas en una columna:")
+            print("4.Salir:")
+
+        opción =input("Ingrese la opción deseada(1, 2, 3 o 4):")
+
+        if opcion == '1':
+                with open(nombre_archivo,'r',encoding= 'utf-8') as archivo:
+                        mostrar_primeras_filas(archivo)
+        elif opcion == '2':
+                nombre_columna= input("Introduce el nombre de la columna para calcular(forma del objeto,aproximación de locación, contador de fatalidad, latitud, longitud o índice geográfico):")
+                calcular_estadisticas(nombre_archivo, nombre_columna)
+        elif opcion == '3':
+                nombre_columna = input("Ingrese el nombre de columna que desea graficar((forma del objeto,aproximación de locación, contador de fatalidad, latitud, longitud o índice geográfico):")
+                graficar_columna(nombre_archivo, nombre_columna)
+        else:
+                print("Opción no válida")
 
     nombre_columna = input("\nIntroduce el nombre de la columna para calcular estadísticas (forma del objeto, aproximación de locación, contador de fatalidad, latitud, longitud, índice geográfico): ")
     calcular_estadisticas(nombre_archivo, nombre_columna)
