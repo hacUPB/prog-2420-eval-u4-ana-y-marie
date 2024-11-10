@@ -1,14 +1,20 @@
 import os 
 
-def listar_archivos(ruta="."):
-    if os.path.exists(ruta) and os.path.isdir(ruta):
-        archivos = os.listdir(ruta)
-        print(f"\n")
-        print(f"Archivos en la ruta '{ruta}': ")
-        for archivo in archivos:
-            print(archivo)
-    else: 
-        print("Ruta invalida")
+def listar_archivos():
+        ruta = input("Ingrese la ruta de un directorio (Enter para el actual): ")
+        ruta = ruta.strip('"')
+        if ruta.strip() == "":
+            ruta = os.getcwd()
+        if os.path.isdir(ruta):
+            print(f"Archivos en el directorio: '{ruta}'")
+            archivos = os.listdir(ruta)
+            if archivos: 
+                for archivo in archivos:
+                    print("archivo")
+            else: 
+                print("No se encontraron archivos en el directorio")
+        else:
+            print("La ruta es inválida.")            
         
         
 def contar_palabras(archivo):
@@ -74,23 +80,25 @@ def menu_de_texto(archivo):
             print("Opción no válida, vuelva a intentarlo")
 
 def main():
-    archivo = r"C:\Users\USER\Downloads\casatux (1).txt"
+    
     while True:
         print("\n")
         print("Menú principal:")
         print("1. Listar archivos presentes en la ruta actual o ingresar una ruta donde buscar los archivos.")
         print("2. Procesar archivo de texto (.txt)")
-        print("3. Salir")
+        print("3. Procesar archivos separados por comas (.csv)")
+        print("4. Salir")
         
         opcion = input("Por favor eliga una de las siguientes opciones: ")
         if opcion == "1":
-            ruta = input("Ingrese la ruta (Presione Enter): ")
-            if ruta == "":
-                ruta = "."
-            listar_archivos(ruta)
+            listar_archivos()
         elif opcion == "2":
+            archivo = input("Ingrese la ruta del archivo: ")
+            archivo = archivo.strip('"')
             menu_de_texto(archivo)
         elif opcion == "3":
+            jji
+        elif opcion == "4":
             print("saliendo...")
             break
         else:
